@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Hygge BNB: Short-Term Rental Management in Boise & the Treasure Valley</title>
-<meta name="description" content="Full-service short-term rental management, styling, and cleaning in Boise, Idaho. A husband & wife team of Airbnb Superhosts. Raise your occupancy, lower your stress." />
+<meta name="description" content="Full-service short-term rental management, styling, and cleaning in Boise, Idaho. Raise your occupancy, lower your stress." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -320,10 +320,10 @@ body.menu-open .mobile-menu a:nth-child(6){transition-delay:.48s}
 /* ============================================================
    PRICING
    ============================================================ */
-.pricing{ background:var(--forest); color:var(--cream); }
+.pricing{ background:#241c15; color:var(--cream); }
 .pricing__grid{ display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(32px,5vw,72px);align-items:start; }
 .rate-card{
-  background:linear-gradient(160deg,var(--forest-3),var(--forest-2));
+  background:linear-gradient(160deg,#34291d,#291f17);
   border-radius:20px;padding:clamp(28px,3.5vw,46px);box-shadow:var(--shadow-card);
   box-shadow:inset 0 0 0 1px rgba(216,164,91,.22), var(--shadow-card);position:relative;overflow:hidden;
 }
@@ -525,7 +525,9 @@ body.menu-open .mobile-menu a:nth-child(6){transition-delay:.48s}
 
 /* ---------- little things ---------- */
 .little{background:var(--linen-2);position:relative;overflow:hidden}
-.little::before{content:"";position:absolute;left:50%;top:-70px;transform:translateX(-50%);width:min(900px,92vw);height:420px;background:radial-gradient(closest-side,rgba(216,164,91,.20),transparent 72%);pointer-events:none}
+.little::before{content:"";position:absolute;left:50%;top:-80px;transform:translateX(-50%);width:min(880px,92vw);height:480px;pointer-events:none;background:radial-gradient(closest-side, rgba(226,150,58,.24), rgba(216,164,91,.11) 46%, transparent 74%);animation:candleFlicker 5.5s ease-in-out infinite;will-change:opacity,transform}
+@keyframes candleFlicker{0%,100%{opacity:.9;transform:translateX(-50%) scale(1)}14%{opacity:1;transform:translateX(-50%) scale(1.025)}27%{opacity:.83;transform:translateX(-50%) scale(.99)}41%{opacity:.98;transform:translateX(-50%) scale(1.018)}55%{opacity:.8;transform:translateX(-50%) scale(.985)}70%{opacity:.96;transform:translateX(-50%) scale(1.022)}84%{opacity:.87;transform:translateX(-50%) scale(1.005)}}
+@media(prefers-reduced-motion:reduce){ .little::before{animation:none} }
 .little__inner{max-width:768px;margin-inline:auto;text-align:center;position:relative;z-index:1}
 .little__inner .h-lg{font-size:clamp(1.95rem,3.6vw,3rem)}
 .little__inner .lede{font-size:clamp(1.04rem,1.4vw,1.2rem);line-height:1.6}
@@ -591,6 +593,45 @@ body.menu-open .mobile-menu a:nth-child(6){transition-delay:.48s}
   .check-list{max-height:none;overflow:visible;padding-right:0}
   .room-progress .pct{min-width:0}
 }
+
+/* ---------- footer revenue calculator ---------- */
+.calc{position:relative;overflow:hidden;background:rgba(247,243,234,.045);border:1px solid rgba(247,243,234,.12);border-radius:24px;padding:clamp(24px,3.5vw,46px);margin-bottom:clamp(40px,6vh,70px)}
+.calc::before{content:"";position:absolute;right:-90px;top:-90px;width:340px;height:340px;background:radial-gradient(closest-side,rgba(216,164,91,.15),transparent 70%);pointer-events:none}
+.calc__head{position:relative;z-index:1}
+.calc__title{font-size:clamp(1.5rem,2.2vw,1.95rem);color:var(--cream);margin-bottom:.28em;line-height:1.15}
+@media(min-width:980px){ .calc__title{white-space:nowrap} }
+.calc__intro{color:var(--cream-soft);max-width:48ch;font-size:1.02rem}
+.calc__grid{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,4vw,54px);align-items:center;margin-top:clamp(24px,3vh,38px)}
+.calc__field{margin-bottom:26px}
+.calc__field:last-child{margin-bottom:0}
+.calc__row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:13px}
+.calc__name{color:var(--cream-soft);font-weight:500}
+.calc__val{font-family:"Instrument Serif",serif;font-size:1.95rem;color:var(--amber-soft);line-height:1}
+.calc__val--sm{font-weight:600;color:var(--cream-soft);font-size:1.02rem}
+.calc__scale{display:flex;justify-content:space-between;margin-top:10px;font-size:.72rem;color:var(--cream-soft);opacity:.55}
+.calc__note{opacity:1;color:var(--amber-soft)}
+.calc__static{padding-top:20px;border-top:1px solid rgba(247,243,234,.1)}
+.calc input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:8px;border-radius:99px;margin:0;cursor:pointer;background:linear-gradient(90deg,var(--amber) 0%,var(--amber) var(--fill,50%),rgba(247,243,234,.16) var(--fill,50%))}
+.calc input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:26px;height:26px;border-radius:50%;background:var(--cream);box-shadow:0 0 0 4px rgba(216,164,91,.85),0 4px 14px rgba(0,0,0,.35);cursor:grab;transition:transform .15s var(--ease)}
+.calc input[type=range]:active::-webkit-slider-thumb{cursor:grabbing;transform:scale(1.15)}
+.calc input[type=range]::-moz-range-thumb{width:26px;height:26px;border:none;border-radius:50%;background:var(--cream);box-shadow:0 0 0 4px rgba(216,164,91,.85),0 4px 14px rgba(0,0,0,.35);cursor:grab}
+.calc input[type=range]::-moz-range-track{height:8px;border-radius:99px;background:transparent}
+.calc input[type=range]:focus-visible{outline:2px solid var(--amber-soft);outline-offset:6px}
+.calc__result{background:var(--forest-2);border:1px solid rgba(216,164,91,.30);border-radius:18px;padding:clamp(24px,3vw,32px);text-align:center;box-shadow:0 20px 50px -30px rgba(0,0,0,.8)}
+.calc__result-label{text-transform:uppercase;letter-spacing:.16em;font-size:.72rem;color:var(--cream-soft);margin-bottom:.7em}
+.calc__result-num{font-family:"Instrument Serif",serif;font-size:clamp(2.7rem,5.2vw,3.9rem);color:var(--amber);line-height:1;letter-spacing:-.01em;font-variant-numeric:tabular-nums}
+.calc__per{font-size:.32em;color:var(--cream-soft);letter-spacing:0;margin-left:.2em;font-family:"Google Sans","Outfit",sans-serif}
+.calc__lines{margin:1.3em 0;display:flex;flex-direction:column;gap:9px;font-size:.9rem}
+.calc__line{display:flex;justify-content:space-between;gap:12px;color:var(--cream-soft);padding-bottom:9px;border-bottom:1px solid rgba(247,243,234,.09)}
+.calc__line span:last-child{color:var(--cream);font-variant-numeric:tabular-nums}
+.calc__cta{width:100%;justify-content:center;margin-top:.3em}
+.calc__fine{position:relative;z-index:1;margin-top:clamp(22px,3vh,30px);font-size:.76rem;color:var(--cream-soft);opacity:.55;max-width:72ch;line-height:1.55}
+@media(max-width:760px){ .calc__grid{grid-template-columns:1fr;gap:26px} }
+
+/* calculator as its own dark section */
+.calc-section{background:var(--forest);color:var(--cream)}
+.calc__result .calc__cta{margin-top:1.5em}
+@media(max-width:760px){ .calc-section, .calc-section .calc{text-align:left} .calc__result{text-align:center} }
 </style>
 <script>window.IMGS={"clay-banks-JRkXiBmTRDI-unsplash":"images/clay-banks-JRkXiBmTRDI-unsplash.jpg","laura-jeff":"images/laura-jeff.jpg","prophsee-journals-ppG24zfENAI-unsplash":"images/prophsee-journals-ppG24zfENAI-unsplash.jpg","gabrielle-maurer-pedJG_zW1bQ-unsplash":"images/gabrielle-maurer-pedJG_zW1bQ-unsplash.jpg","zane-persaud-CCSfXSTAXXQ-unsplash":"images/zane-persaud-CCSfXSTAXXQ-unsplash.jpg","clay-banks-NKmqPlLCLTU-unsplash":"images/clay-banks-NKmqPlLCLTU-unsplash.jpg","hans-1uJVd81R_dY-unsplash":"images/hans-1uJVd81R_dY-unsplash.jpg","spacejoy":"images/spacejoy.jpg","clay-banks-r8i3RwrVcRk-unsplash":"images/clay-banks-r8i3RwrVcRk-unsplash.jpg","julian-hochgesang-SDxDQXixgfU-unsplash":"images/julian-hochgesang-SDxDQXixgfU-unsplash.jpg","hans-KPK_Qn2Pc5s-unsplash":"images/hans-KPK_Qn2Pc5s-unsplash.jpg"};</script>
 <script>document.documentElement.classList.add("js");setTimeout(function(){try{document.querySelectorAll(".reveal:not(.in)").forEach(function(e){e.classList.add("in")});document.body.classList.add("loaded");}catch(e){}},2200);</script>
@@ -605,15 +646,16 @@ body.menu-open .mobile-menu a:nth-child(6){transition-delay:.48s}
 <path d="M237.541 90.4248C238.684 90.2905 241.64 90.1175 242.679 90.416C243.333 92.2163 243.03 117.829 243.005 121.67C241.29 121.738 239.226 121.685 237.484 121.686C237.465 117.276 237.484 112.866 237.541 108.457C235.023 108.542 233.198 108.566 230.693 108.417C230.892 109.832 230.992 119.67 230.799 121.068L230.611 121.445C229.516 121.829 226.448 121.813 225.128 121.85C224.787 118 224.569 93.4125 225.369 90.733C226.507 89.9615 229.563 90.2998 231 90.362C230.696 94.7368 230.843 98.4153 230.993 102.788C233.082 102.429 235.4 102.488 237.534 102.48C237.403 98.9458 237.426 93.9108 237.541 90.4248Z" fill="#D09C54"/>
 <path d="M230.799 121.068C229.998 120.028 229.806 109.442 230.693 108.417C230.892 109.832 230.992 119.67 230.799 121.068Z" fill="#CB9757"/>
 <path d="M387.297 164.563C389.587 164.626 391.94 164.617 394.225 164.65C402.573 164.768 414.08 163.092 414.543 174.901C414.685 178.522 413.258 180.75 410.88 183.313C417.303 186.23 419.207 192.883 415.277 198.746C415.172 198.877 415.065 199.005 414.955 199.132C414.137 200.074 411.943 201.927 410.945 202.344C408.45 203.385 388.167 203.468 387.242 202.663C386.717 199.598 386.56 166.125 387.297 164.563ZM392.272 198.042C397.39 197.747 406.695 198.961 410.135 196.555C411.23 194.977 411.68 194.222 412.193 192.312C411.598 190.181 411.195 188.59 409.05 187.417C404.75 185.068 396.905 186.934 392.455 186.293C392.485 189.453 392.675 195.144 392.272 198.042ZM392.425 181.264C396.38 181.249 404.975 182.005 407.603 179.63C409.543 177.274 410.993 173.952 408.075 171.716C403.878 168.499 397.425 170.227 392.478 169.486C392.48 172.871 392.645 178.02 392.425 181.264Z" fill="#D09C54"/>
-<path d="M296.532 164.573C305.972 165.306 322.205 161.158 323.703 174.183C324.113 177.764 322.227 180.599 320.095 183.205C320.65 183.548 321.2 183.898 321.745 184.255C326.477 187.369 327.657 193.977 324.497 198.614C319.22 204.406 315.995 202.986 308.755 203.132C304.53 203.218 300.288 202.961 296.07 203.302C295.875 194.61 295.835 185.915 295.95 177.222C295.96 175.266 295.61 165.556 296.532 164.573ZM319.082 196.742C320.162 195.021 321.655 192.488 320.907 190.444C318.467 183.784 306.295 187.189 301.45 186.289C301.473 190.176 301.65 194.219 301.187 198.044C305.57 197.855 316.135 198.755 319.082 196.742ZM301.422 181.274C305.432 181.252 314.165 182.077 316.695 179.537C318.013 178.068 318.34 177.459 318.83 175.545C317.182 167.32 307.91 170.268 301.55 169.495C301.322 173.478 301.66 177.615 301.422 181.274Z" fill="#D09C54"/>
-<path d="M152.884 164.094C153.463 164.039 154.045 164.011 154.626 164.01C161.101 164.04 165.934 166.973 170.322 171.407C168.894 172.655 166.929 174.846 165.167 173.216C152.886 161.853 134.916 175.412 141.652 190.369C143.19 193.759 146.019 196.393 149.51 197.684C153.325 199.012 157.509 198.779 161.152 197.036C164.843 195.247 166.9 192.522 168.182 188.74C165.979 188.651 156.301 188.987 155.114 188.278C154.672 187.504 154.791 186.672 154.812 185.766C154.901 185.141 154.974 184.946 155.192 184.351C155.348 184.237 155.537 184.099 155.758 183.938C159.843 183.78 169.322 183.373 172.977 183.816C173.057 184.635 173.1 188.044 173.023 188.73C172.788 190.815 173.595 202.192 172.621 203.113C165.595 204.674 168.717 201.38 167.874 199.194C167.149 199.036 166.41 199.792 165.753 200.22C146.825 212.566 126.031 189.898 138.934 171.835C142.096 167.408 147.597 164.826 152.884 164.094Z" fill="#D09C54"/>
+<path d="M296.532 164.573C305.972 165.306 322.205 161.158 323.703 174.183C324.113 177.764 322.227 180.599 320.095 183.205C320.65 183.548 321.2 183.898 321.745 184.255C326.477 187.369 327.657 193.977 324.497 198.614C319.22 204.406 315.995 202.986 308.755 203.132C304.53 203.218 300.288 202.961 296.07 203.302C295.875 194.61 295.835 185.915 295.95 177.222C295.96 175.266 295.61 165.556 296.532 164.573ZM319.082 196.742C320.162 195.021 321.655 192.488 320.907 190.444C318.467 183.784 306.295 187.189 301.45 186.289C301.473 190.176 301.65 194.219 301.187 198.044C305.57 197.855 316.135 198.755 319.082 196.742ZM301.422 181.274C305.432 181.253 314.165 182.077 316.695 179.537C318.013 178.068 318.34 177.459 318.83 175.545C317.182 167.32 307.91 170.268 301.55 169.495C301.322 173.478 301.66 177.615 301.422 181.274Z" fill="#D09C54"/>
+<path d="M152.884 164.094C153.463 164.039 154.045 164.011 154.626 164.01C161.101 164.04 165.934 166.973 170.322 171.407C168.894 172.655 166.929 174.846 165.167 173.216C152.886 161.853 134.916 175.412 141.652 190.369C143.19 193.759 146.019 196.393 149.51 197.684C153.325 199.012 157.509 198.779 161.152 197.036C164.843 195.247 166.9 192.522 168.182 188.74C165.979 188.651 156.301 188.987 155.114 188.278C154.672 187.504 154.791 186.672 154.812 185.766C154.901 185.141 154.974 184.946 155.192 184.351C155.348 184.237 155.537 184.099 155.758 183.938C159.843 183.78 169.322 183.372 172.977 183.816C173.057 184.635 173.1 188.044 173.023 188.73C172.788 190.815 173.595 202.192 172.621 203.113C165.595 204.674 168.717 201.38 167.874 199.194C167.149 199.036 166.41 199.792 165.753 200.22C146.825 212.566 126.031 189.898 138.934 171.835C142.096 167.408 147.597 164.826 152.884 164.094Z" fill="#D09C54"/>
 <path d="M203.154 164.097C208.869 163.034 216.409 167.192 220.093 171.341C218.938 172.666 217.756 173.379 216.287 174.259C213.672 172.408 213.124 171.258 209.492 169.954C205.737 168.631 201.61 168.855 198.02 170.578C194.562 172.255 192.205 175.299 190.987 178.9C189.621 182.854 189.909 187.191 191.784 190.93C193.445 194.237 196.378 196.727 199.91 197.83C207.395 200.189 215.709 196.595 217.983 188.773C216.029 188.73 206.56 188.874 205.253 188.593C204.594 187.693 204.777 187.59 204.62 186.323C204.671 185.659 204.739 185.268 204.87 184.613C205.371 183.95 207.017 183.475 207.701 183.617C211.122 184.324 219.826 182.956 222.471 183.984C223.331 185.119 222.981 200.566 222.989 203.208C221.332 203.323 219.437 203.717 218.148 202.734C217.266 201.414 217.676 200.204 217.925 198.645C208.617 206.014 195.894 205.528 188.869 195.759C179.633 182.916 187.269 165.608 203.154 164.097Z" fill="#D09C54"/>
 <path d="M366.598 192.468L366.575 192.273C366.145 188.346 366.373 183.086 366.325 178.996C366.288 176.039 366.03 167.588 366.538 165.037C367.488 164.185 370.195 164.483 371.578 164.511L371.593 189.121C371.61 193.323 371.738 197.844 371.535 202.046C371.495 202.86 370.897 203.118 370.267 203.588C368.03 203.083 367.017 202.106 365.617 200.317C358.797 191.608 351.155 183.067 344.573 174.217C344.8 177.771 344.71 182.192 344.725 185.809C344.775 191.544 344.78 197.279 344.748 203.014C343.133 203.246 340.818 203.917 339.638 202.584C339.263 199.618 339.508 188.589 339.505 185.214L339.475 173.306C339.46 171.382 339.043 165.848 340.073 164.508C341.093 164.503 343.195 164.673 343.913 165.44C351.873 173.943 358.763 183.837 366.598 192.468Z" fill="#D09C54"/>
-<path d="M53.5658 164.499C55.222 164.474 56.9588 164.523 58.6223 164.547C58.7478 167.326 58.7078 178.979 58.4565 181.276C65.456 181.022 73.1403 181.177 80.2365 181.13C79.8925 178.743 80.0825 167.403 80.239 164.671C81.78 164.528 84.243 164.089 85.281 165.382C85.814 169.899 85.3485 177.855 85.484 182.691C85.655 188.808 85.4425 195.597 85.464 201.772C85.4658 202.32 85.3015 202.795 84.99 203.252C83.538 203.352 82.282 203.487 80.8268 203.311C79.5993 201.96 80.0055 188.757 80.1028 186.227C77.6733 186.493 72.9815 186.296 70.251 186.273C66.7148 186.244 61.9285 186.547 58.534 186.303C58.5885 191.682 58.8043 197.731 58.5928 203.052C56.6898 203.267 55.378 203.34 53.4618 203.373C53.138 200.638 53.094 165.973 53.5658 164.499Z" fill="#D09C54"/>
+<path d="M53.5658 164.499C55.222 164.474 56.9588 164.523 58.6223 164.547C58.7478 167.326 58.7078 178.979 58.4565 181.276C65.456 181.022 73.1403 181.177 80.2365 181.13C79.8925 178.743 80.0825 167.403 80.239 164.671C81.78 164.528 84.243 164.089 85.281 165.382C85.814 169.899 85.3485 177.855 85.484 182.691C85.655 188.808 85.4425 195.597 85.464 201.772C85.4658 202.32 85.3015 202.795 84.99 203.252C83.538 203.352 82.282 203.487 80.8268 203.311C79.5993 201.96 80.0055 188.757 80.1028 186.227C77.6733 186.493 72.9815 186.295 70.251 186.273C66.7148 186.244 61.9285 186.547 58.534 186.303C58.5885 191.682 58.8043 197.731 58.5928 203.052C56.6898 203.267 55.378 203.34 53.4618 203.373C53.138 200.638 53.094 165.973 53.5658 164.499Z" fill="#D09C54"/>
 <path d="M236.943 164.668C246.046 164.736 255.15 164.724 264.25 164.632C264.833 171.154 263.34 169.695 257.815 169.732C253.748 169.677 249.681 169.665 245.613 169.696C244.509 169.636 243.395 169.596 242.301 169.439C242.163 173.677 242.213 177.151 242.202 181.33C244.867 181.276 257.1 180.862 258.7 181.687C259.215 182.795 259.002 185.014 258.935 186.318C255.597 186.264 252.26 186.248 248.922 186.27C247.271 186.285 243.724 186.429 242.213 186.211C242.112 189.846 242.381 194.67 242.068 198.052C245.063 197.986 262.405 197.683 263.987 198.424C264.512 199.431 264.305 201.805 264.263 203.047C255.915 203.294 244.802 202.617 236.904 203.221C236.944 190.612 236.672 177.165 236.943 164.668Z" fill="#D09C54"/>
 <path d="M245.613 169.696C245.98 169.1 246.207 168.682 246.996 168.64C250.708 168.44 254.485 167.928 257.815 169.732C253.748 169.677 249.681 169.665 245.613 169.696Z" fill="#CB9757"/>
 <path d="M114.235 179.334C116.938 175.244 120.549 169.244 123.781 165.594C125.043 164.169 128.86 164.763 130.702 164.932C128.144 168.204 118.382 182.226 117.151 185.511C116.769 186.531 116.811 187.84 116.765 188.923C116.791 191.052 117.088 201.765 116.588 202.975C115.092 203.309 113.102 203.289 111.538 203.335C111.069 197.885 111.497 190.922 111.208 185.093C107.455 179.113 100.672 170.524 97.6107 164.718C99.0892 164.677 103.133 164.36 104.127 165.431C107.909 169.51 110.759 174.942 114.235 179.334Z" fill="#D09C54"/>
 <path d="M116.765 188.923C116.791 191.052 117.088 201.765 116.588 202.975C115.796 200.868 116.177 191.317 116.765 188.923Z" fill="#6C531B"/>
+<path d="M236.032 62.9055C236.032 62.9055 230.203 63.8414 227.183 59.8215C223.681 55.1422 228.965 47.4001 230.035 43.9332C231.104 40.4663 234.04 35 234.04 35C234.04 35 236.682 41.87 238.339 44.8052C239.995 47.7617 242.994 54.0149 241.673 57.7583C240.394 61.5018 238.947 62.6929 236.032 62.9055Z" fill="#E9AD61"/>
 </svg>
 </a>
   <div class="nav__cta">
@@ -626,7 +668,7 @@ body.menu-open .mobile-menu a:nth-child(6){transition-delay:.48s}
 <header class="hero" id="top">
   <div class="hero__bg"><img data-img="spacejoy" src="images/spacejoy.jpg" loading="eager" fetchpriority="high" decoding="async" alt="A bright, warm living room with a tan leather sofa, an arched mirror and a layered rug" style="object-position:center 48%" /></div>
   <div class="hero__inner">
-    <h1 class="display reveal-hero d2">Your rental home<br><span class="serif-italic" style="color:var(--amber-soft)">Fully Managed</span></h1>
+    <h1 class="display reveal-hero d2">Your Rental Property<br><span class="serif-italic" style="color:var(--amber-soft)">Fully Managed</span></h1>
     <p class="lede reveal-hero d3">Full-service short-term rental management, styling, and cleaning, serving Boise, Idaho.</p>
     <div class="btn-row reveal-hero d4">
       <a id="heroBookBtn" href="https://calendar.app.google/Xsxrj18eoiknFWmH8" target="_blank" rel="noopener" class="btn">Book a call <span class="ico">→</span></a>
@@ -664,40 +706,37 @@ body.menu-open .mobile-menu a:nth-child(6){transition-delay:.48s}
   </div>
 </section>
 
-<!-- ============ PROCESS ============ -->
-<section class="section process dark" id="process">
+<!-- ============ REVENUE CALCULATOR ============ -->
+<section class="section calc-section" id="calc-section">
   <div class="wrap">
-    <div class="process__head reveal">
-      <h2 class="process__title">Three steps to an optimized listing</h2>
-      <p class="lede muted" style="max-width:46ch;margin-top:.7em">From the first throw pillow to the final checkout, we handle the whole arc.</p>
-    </div>
-    <div class="process__layout">
-      <div class="process__steps" id="processSteps">
-        <article class="pstep active" data-i="0">
-          <div class="pstep__head"><span class="pstep__num">01</span><h3>Styling &amp; Decorating</h3></div>
-          <p class="muted">We dress every room around the small comforts guests remember: warm light, layered textures, and the little finishing touches that turn a house into a five-star stay.</p>
-          <div class="pstep__img"><div class="arch-frame"><div class="arch-img"><img data-img="prophsee-journals-ppG24zfENAI-unsplash" src="images/prophsee-journals-ppG24zfENAI-unsplash.jpg" loading="lazy" decoding="async" alt="Styled tabletop with a ceramic vase, candle and books" /></div></div></div>
-        </article>
-        <article class="pstep" data-i="1">
-          <div class="pstep__head"><span class="pstep__num">02</span><h3>Posting &amp; Bookings</h3></div>
-          <p class="muted">Pro photography and a sharp listing on Airbnb, Vrbo and every major site. Calendars kept in sync so you’re never double-booked, and pricing tuned to demand so you’re never underpriced.</p>
-          <div class="pstep__img"><div class="arch-frame"><div class="arch-img"><img data-img="hans-1uJVd81R_dY-unsplash" src="images/hans-1uJVd81R_dY-unsplash.jpg" loading="lazy" decoding="async" alt="A sun-filled room with floor-to-ceiling windows looking onto the trees" /></div></div></div>
-        </article>
-        <article class="pstep" data-i="2">
-          <div class="pstep__head"><span class="pstep__num">03</span><h3>Managing &amp; Cleaning</h3></div>
-          <p class="muted">Fast, warm guest replies and spotless insured turnovers, plus restocking and hand-tied welcome baskets. You keep the deposits; we keep the calm.</p>
-          <div class="pstep__img"><div class="arch-frame"><div class="arch-img"><img data-img="clay-banks-r8i3RwrVcRk-unsplash" src="images/clay-banks-r8i3RwrVcRk-unsplash.jpg" loading="lazy" decoding="async" alt="A freshly made bed in a bright, warm bedroom" /></div></div></div>
-        </article>
+    <div class="calc reveal" id="calc">
+      <div class="calc__head">
+        <h3 class="calc__title">See what your property could earn with Hygge BNB.</h3>
+        <p class="calc__intro">Drag the sliders to estimate your annual return with Hygge BNB.</p>
       </div>
-      <div class="process__visual" aria-hidden="true">
-        <div class="pv-sticky">
-          <div class="arch-frame"><div class="arch-img pv-stack">
-            <img class="pv-img active" data-img="prophsee-journals-ppG24zfENAI-unsplash" src="images/prophsee-journals-ppG24zfENAI-unsplash.jpg" loading="lazy" decoding="async" alt="" />
-            <img class="pv-img" data-img="hans-1uJVd81R_dY-unsplash" src="images/hans-1uJVd81R_dY-unsplash.jpg" loading="lazy" decoding="async" alt="" />
-            <img class="pv-img" data-img="clay-banks-r8i3RwrVcRk-unsplash" src="images/clay-banks-r8i3RwrVcRk-unsplash.jpg" loading="lazy" decoding="async" alt="" />
-          </div></div>
+      <div class="calc__grid">
+        <div class="calc__controls">
+          <div class="calc__field">
+            <div class="calc__row"><span class="calc__name">Average nightly rate</span><span class="calc__val" id="rateVal">$220</span></div>
+            <input type="range" id="calcRate" min="75" max="600" step="5" value="220" aria-label="Average nightly rate" />
+            <div class="calc__scale"><span>$75</span><span class="calc__note">Boise average</span><span>$600</span></div>
+          </div>
+          <div class="calc__field">
+            <div class="calc__row"><span class="calc__name">Annual occupancy</span><span class="calc__val" id="occVal">65%</span></div>
+            <input type="range" id="calcOcc" min="35" max="90" step="1" value="65" aria-label="Annual occupancy" />
+            <div class="calc__scale"><span>35%</span><span>90%</span></div>
+          </div>
+          <div class="calc__field calc__static">
+            <div class="calc__row"><span class="calc__name">Management rate</span><span class="calc__val--sm">20% - Estimated</span></div>
+          </div>
+        </div>
+        <div class="calc__result">
+          <div class="calc__result-label">Your estimated net return</div>
+          <div class="calc__result-num" id="netVal">$41,756<span class="calc__per">/year</span></div>
+          <a href="https://calendar.app.google/Xsxrj18eoiknFWmH8" target="_blank" rel="noopener" class="btn calc__cta">Book a call <span class="ico">→</span></a>
         </div>
       </div>
+      <p class="calc__fine">Estimate only, based on a 20% partial-management rate before cleaning fees and other expenses. Actual returns vary with your property, seasonality, and the market.</p>
     </div>
   </div>
 </section>
@@ -735,12 +774,50 @@ body.menu-open .mobile-menu a:nth-child(6){transition-delay:.48s}
   </div>
 </section>
 
+<!-- ============ PROCESS ============ -->
+<section class="section process dark" id="process">
+  <div class="wrap">
+    <div class="process__head reveal">
+      <h2 class="process__title">Three steps to an optimized listing</h2>
+      <p class="lede muted" style="max-width:46ch;margin-top:.7em">The little details make all the difference.</p>
+    </div>
+    <div class="process__layout">
+      <div class="process__steps" id="processSteps">
+        <article class="pstep active" data-i="0">
+          <div class="pstep__head"><span class="pstep__num">01</span><h3>Styling &amp; Decorating</h3></div>
+          <p class="muted">We dress every room around the small comforts guests remember: warm light, layered textures, and the little finishing touches that turn a house into a five-star stay.</p>
+          <div class="pstep__img"><div class="arch-frame"><div class="arch-img"><img data-img="prophsee-journals-ppG24zfENAI-unsplash" src="images/prophsee-journals-ppG24zfENAI-unsplash.jpg" loading="lazy" decoding="async" alt="Styled tabletop with a ceramic vase, candle and books" /></div></div></div>
+        </article>
+        <article class="pstep" data-i="1">
+          <div class="pstep__head"><span class="pstep__num">02</span><h3>Posting &amp; Bookings</h3></div>
+          <p class="muted">Pro photography and a sharp listing on Airbnb, Vrbo and every major site. Calendars kept in sync so you’re never double-booked, and pricing tuned to demand so you’re never underpriced.</p>
+          <div class="pstep__img"><div class="arch-frame"><div class="arch-img"><img data-img="hans-1uJVd81R_dY-unsplash" src="images/hans-1uJVd81R_dY-unsplash.jpg" loading="lazy" decoding="async" alt="A sun-filled room with floor-to-ceiling windows looking onto the trees" /></div></div></div>
+        </article>
+        <article class="pstep" data-i="2">
+          <div class="pstep__head"><span class="pstep__num">03</span><h3>Managing &amp; Cleaning</h3></div>
+          <p class="muted">Fast, warm guest replies and spotless insured turnovers, plus restocking and hand-tied welcome baskets. You keep the deposits; we keep the calm.</p>
+          <div class="pstep__img"><div class="arch-frame"><div class="arch-img"><img data-img="clay-banks-r8i3RwrVcRk-unsplash" src="images/clay-banks-r8i3RwrVcRk-unsplash.jpg" loading="lazy" decoding="async" alt="A freshly made bed in a bright, warm bedroom" /></div></div></div>
+        </article>
+      </div>
+      <div class="process__visual" aria-hidden="true">
+        <div class="pv-sticky">
+          <div class="arch-frame"><div class="arch-img pv-stack">
+            <img class="pv-img active" data-img="prophsee-journals-ppG24zfENAI-unsplash" src="images/prophsee-journals-ppG24zfENAI-unsplash.jpg" loading="lazy" decoding="async" alt="" />
+            <img class="pv-img" data-img="hans-1uJVd81R_dY-unsplash" src="images/hans-1uJVd81R_dY-unsplash.jpg" loading="lazy" decoding="async" alt="" />
+            <img class="pv-img" data-img="clay-banks-r8i3RwrVcRk-unsplash" src="images/clay-banks-r8i3RwrVcRk-unsplash.jpg" loading="lazy" decoding="async" alt="" />
+          </div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ PRICING ============ -->
 <section class="section pricing dark" id="pricing">
   <div class="wrap">
     <div style="max-width:60ch;margin-bottom:clamp(36px,5vh,60px)">
-      <h2 class="h-xl reveal d1" style="margin:.5em 0 .4em">Built around your<br>home, not a tier.</h2>
-      <p class="lede muted reveal d2" style="max-width:54ch">We focus on customizing a package for each home. Take the full white-glove experience, or pick only the pieces you need. Here's the range, and everything we do.</p>
+      <h2 class="h-xl reveal d1" style="margin:.5em 0 .4em">Built around your<br>home, not a default.</h2>
+      <p class="lede muted reveal d2" style="max-width:54ch">We focus on customizing a package for each home. Here's the range, and everything we do to serve your guests.</p>
     </div>
     <div class="pricing__grid">
       <div class="reveal">
@@ -759,7 +836,7 @@ body.menu-open .mobile-menu a:nth-child(6){transition-delay:.48s}
           <span class="svc-sub">Mix &amp; match</span>
         </div>
         <ul class="svc-list">
-          <li><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#d8a45b" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4.5 4.5L19 7"/></svg></span>Full home styling</li>
+          <li><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#d8a45b" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4.5 4.5L19 7"/></svg></span>Hygge Cozy Details</li>
           <li><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#d8a45b" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4.5 4.5L19 7"/></svg></span>Welcome basket curation</li>
           <li><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#d8a45b" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4.5 4.5L19 7"/></svg></span>Guest recommendation book</li>
           <li><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#d8a45b" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4.5 4.5L19 7"/></svg></span>Dynamic pricing</li>
@@ -809,7 +886,7 @@ body.menu-open .mobile-menu a:nth-child(6){transition-delay:.48s}
   <div class="wrap">
     <div class="faq__grid">
       <div>
-        <h2 class="faq-title reveal d1">You probably have some questions.<br>We have some answers.</h2>
+        <h2 class="faq-title reveal d1">You probably have some questions.<br><em>We have some answers.</em></h2>
         <p class="lede muted reveal d2" style="max-width:34ch">Still wondering about something specific to your home? That's what the call is for.</p>
         <a href="https://calendar.app.google/Xsxrj18eoiknFWmH8" target="_blank" rel="noopener" class="btn ghost reveal d2" style="margin-top:1.6em">Book a call <span class="ico">→</span></a>
       </div>
@@ -841,18 +918,19 @@ body.menu-open .mobile-menu a:nth-child(6){transition-delay:.48s}
 <path d="M237.541 90.4248C238.684 90.2905 241.64 90.1175 242.679 90.416C243.333 92.2163 243.03 117.829 243.005 121.67C241.29 121.738 239.226 121.685 237.484 121.686C237.465 117.276 237.484 112.866 237.541 108.457C235.023 108.542 233.198 108.566 230.693 108.417C230.892 109.832 230.992 119.67 230.799 121.068L230.611 121.445C229.516 121.829 226.448 121.813 225.128 121.85C224.787 118 224.569 93.4125 225.369 90.733C226.507 89.9615 229.563 90.2998 231 90.362C230.696 94.7368 230.843 98.4153 230.993 102.788C233.082 102.429 235.4 102.488 237.534 102.48C237.403 98.9458 237.426 93.9108 237.541 90.4248Z" fill="#D09C54"/>
 <path d="M230.799 121.068C229.998 120.028 229.806 109.442 230.693 108.417C230.892 109.832 230.992 119.67 230.799 121.068Z" fill="#CB9757"/>
 <path d="M387.297 164.563C389.587 164.626 391.94 164.617 394.225 164.65C402.573 164.768 414.08 163.092 414.543 174.901C414.685 178.522 413.258 180.75 410.88 183.313C417.303 186.23 419.207 192.883 415.277 198.746C415.172 198.877 415.065 199.005 414.955 199.132C414.137 200.074 411.943 201.927 410.945 202.344C408.45 203.385 388.167 203.468 387.242 202.663C386.717 199.598 386.56 166.125 387.297 164.563ZM392.272 198.042C397.39 197.747 406.695 198.961 410.135 196.555C411.23 194.977 411.68 194.222 412.193 192.312C411.598 190.181 411.195 188.59 409.05 187.417C404.75 185.068 396.905 186.934 392.455 186.293C392.485 189.453 392.675 195.144 392.272 198.042ZM392.425 181.264C396.38 181.249 404.975 182.005 407.603 179.63C409.543 177.274 410.993 173.952 408.075 171.716C403.878 168.499 397.425 170.227 392.478 169.486C392.48 172.871 392.645 178.02 392.425 181.264Z" fill="#D09C54"/>
-<path d="M296.532 164.573C305.972 165.306 322.205 161.158 323.703 174.183C324.113 177.764 322.227 180.599 320.095 183.205C320.65 183.548 321.2 183.898 321.745 184.255C326.477 187.369 327.657 193.977 324.497 198.614C319.22 204.406 315.995 202.986 308.755 203.132C304.53 203.218 300.288 202.961 296.07 203.302C295.875 194.61 295.835 185.915 295.95 177.222C295.96 175.266 295.61 165.556 296.532 164.573ZM319.082 196.742C320.162 195.021 321.655 192.488 320.907 190.444C318.467 183.784 306.295 187.189 301.45 186.289C301.473 190.176 301.65 194.219 301.187 198.044C305.57 197.855 316.135 198.755 319.082 196.742ZM301.422 181.274C305.432 181.252 314.165 182.077 316.695 179.537C318.013 178.068 318.34 177.459 318.83 175.545C317.182 167.32 307.91 170.268 301.55 169.495C301.322 173.478 301.66 177.615 301.422 181.274Z" fill="#D09C54"/>
-<path d="M152.884 164.094C153.463 164.039 154.045 164.011 154.626 164.01C161.101 164.04 165.934 166.973 170.322 171.407C168.894 172.655 166.929 174.846 165.167 173.216C152.886 161.853 134.916 175.412 141.652 190.369C143.19 193.759 146.019 196.393 149.51 197.684C153.325 199.012 157.509 198.779 161.152 197.036C164.843 195.247 166.9 192.522 168.182 188.74C165.979 188.651 156.301 188.987 155.114 188.278C154.672 187.504 154.791 186.672 154.812 185.766C154.901 185.141 154.974 184.946 155.192 184.351C155.348 184.237 155.537 184.099 155.758 183.938C159.843 183.78 169.322 183.373 172.977 183.816C173.057 184.635 173.1 188.044 173.023 188.73C172.788 190.815 173.595 202.192 172.621 203.113C165.595 204.674 168.717 201.38 167.874 199.194C167.149 199.036 166.41 199.792 165.753 200.22C146.825 212.566 126.031 189.898 138.934 171.835C142.096 167.408 147.597 164.826 152.884 164.094Z" fill="#D09C54"/>
+<path d="M296.532 164.573C305.972 165.306 322.205 161.158 323.703 174.183C324.113 177.764 322.227 180.599 320.095 183.205C320.65 183.548 321.2 183.898 321.745 184.255C326.477 187.369 327.657 193.977 324.497 198.614C319.22 204.406 315.995 202.986 308.755 203.132C304.53 203.218 300.288 202.961 296.07 203.302C295.875 194.61 295.835 185.915 295.95 177.222C295.96 175.266 295.61 165.556 296.532 164.573ZM319.082 196.742C320.162 195.021 321.655 192.488 320.907 190.444C318.467 183.784 306.295 187.189 301.45 186.289C301.473 190.176 301.65 194.219 301.187 198.044C305.57 197.855 316.135 198.755 319.082 196.742ZM301.422 181.274C305.432 181.253 314.165 182.077 316.695 179.537C318.013 178.068 318.34 177.459 318.83 175.545C317.182 167.32 307.91 170.268 301.55 169.495C301.322 173.478 301.66 177.615 301.422 181.274Z" fill="#D09C54"/>
+<path d="M152.884 164.094C153.463 164.039 154.045 164.011 154.626 164.01C161.101 164.04 165.934 166.973 170.322 171.407C168.894 172.655 166.929 174.846 165.167 173.216C152.886 161.853 134.916 175.412 141.652 190.369C143.19 193.759 146.019 196.393 149.51 197.684C153.325 199.012 157.509 198.779 161.152 197.036C164.843 195.247 166.9 192.522 168.182 188.74C165.979 188.651 156.301 188.987 155.114 188.278C154.672 187.504 154.791 186.672 154.812 185.766C154.901 185.141 154.974 184.946 155.192 184.351C155.348 184.237 155.537 184.099 155.758 183.938C159.843 183.78 169.322 183.372 172.977 183.816C173.057 184.635 173.1 188.044 173.023 188.73C172.788 190.815 173.595 202.192 172.621 203.113C165.595 204.674 168.717 201.38 167.874 199.194C167.149 199.036 166.41 199.792 165.753 200.22C146.825 212.566 126.031 189.898 138.934 171.835C142.096 167.408 147.597 164.826 152.884 164.094Z" fill="#D09C54"/>
 <path d="M203.154 164.097C208.869 163.034 216.409 167.192 220.093 171.341C218.938 172.666 217.756 173.379 216.287 174.259C213.672 172.408 213.124 171.258 209.492 169.954C205.737 168.631 201.61 168.855 198.02 170.578C194.562 172.255 192.205 175.299 190.987 178.9C189.621 182.854 189.909 187.191 191.784 190.93C193.445 194.237 196.378 196.727 199.91 197.83C207.395 200.189 215.709 196.595 217.983 188.773C216.029 188.73 206.56 188.874 205.253 188.593C204.594 187.693 204.777 187.59 204.62 186.323C204.671 185.659 204.739 185.268 204.87 184.613C205.371 183.95 207.017 183.475 207.701 183.617C211.122 184.324 219.826 182.956 222.471 183.984C223.331 185.119 222.981 200.566 222.989 203.208C221.332 203.323 219.437 203.717 218.148 202.734C217.266 201.414 217.676 200.204 217.925 198.645C208.617 206.014 195.894 205.528 188.869 195.759C179.633 182.916 187.269 165.608 203.154 164.097Z" fill="#D09C54"/>
 <path d="M366.598 192.468L366.575 192.273C366.145 188.346 366.373 183.086 366.325 178.996C366.288 176.039 366.03 167.588 366.538 165.037C367.488 164.185 370.195 164.483 371.578 164.511L371.593 189.121C371.61 193.323 371.738 197.844 371.535 202.046C371.495 202.86 370.897 203.118 370.267 203.588C368.03 203.083 367.017 202.106 365.617 200.317C358.797 191.608 351.155 183.067 344.573 174.217C344.8 177.771 344.71 182.192 344.725 185.809C344.775 191.544 344.78 197.279 344.748 203.014C343.133 203.246 340.818 203.917 339.638 202.584C339.263 199.618 339.508 188.589 339.505 185.214L339.475 173.306C339.46 171.382 339.043 165.848 340.073 164.508C341.093 164.503 343.195 164.673 343.913 165.44C351.873 173.943 358.763 183.837 366.598 192.468Z" fill="#D09C54"/>
-<path d="M53.5658 164.499C55.222 164.474 56.9588 164.523 58.6223 164.547C58.7478 167.326 58.7078 178.979 58.4565 181.276C65.456 181.022 73.1403 181.177 80.2365 181.13C79.8925 178.743 80.0825 167.403 80.239 164.671C81.78 164.528 84.243 164.089 85.281 165.382C85.814 169.899 85.3485 177.855 85.484 182.691C85.655 188.808 85.4425 195.597 85.464 201.772C85.4658 202.32 85.3015 202.795 84.99 203.252C83.538 203.352 82.282 203.487 80.8268 203.311C79.5993 201.96 80.0055 188.757 80.1028 186.227C77.6733 186.493 72.9815 186.296 70.251 186.273C66.7148 186.244 61.9285 186.547 58.534 186.303C58.5885 191.682 58.8043 197.731 58.5928 203.052C56.6898 203.267 55.378 203.34 53.4618 203.373C53.138 200.638 53.094 165.973 53.5658 164.499Z" fill="#D09C54"/>
+<path d="M53.5658 164.499C55.222 164.474 56.9588 164.523 58.6223 164.547C58.7478 167.326 58.7078 178.979 58.4565 181.276C65.456 181.022 73.1403 181.177 80.2365 181.13C79.8925 178.743 80.0825 167.403 80.239 164.671C81.78 164.528 84.243 164.089 85.281 165.382C85.814 169.899 85.3485 177.855 85.484 182.691C85.655 188.808 85.4425 195.597 85.464 201.772C85.4658 202.32 85.3015 202.795 84.99 203.252C83.538 203.352 82.282 203.487 80.8268 203.311C79.5993 201.96 80.0055 188.757 80.1028 186.227C77.6733 186.493 72.9815 186.295 70.251 186.273C66.7148 186.244 61.9285 186.547 58.534 186.303C58.5885 191.682 58.8043 197.731 58.5928 203.052C56.6898 203.267 55.378 203.34 53.4618 203.373C53.138 200.638 53.094 165.973 53.5658 164.499Z" fill="#D09C54"/>
 <path d="M236.943 164.668C246.046 164.736 255.15 164.724 264.25 164.632C264.833 171.154 263.34 169.695 257.815 169.732C253.748 169.677 249.681 169.665 245.613 169.696C244.509 169.636 243.395 169.596 242.301 169.439C242.163 173.677 242.213 177.151 242.202 181.33C244.867 181.276 257.1 180.862 258.7 181.687C259.215 182.795 259.002 185.014 258.935 186.318C255.597 186.264 252.26 186.248 248.922 186.27C247.271 186.285 243.724 186.429 242.213 186.211C242.112 189.846 242.381 194.67 242.068 198.052C245.063 197.986 262.405 197.683 263.987 198.424C264.512 199.431 264.305 201.805 264.263 203.047C255.915 203.294 244.802 202.617 236.904 203.221C236.944 190.612 236.672 177.165 236.943 164.668Z" fill="#D09C54"/>
 <path d="M245.613 169.696C245.98 169.1 246.207 168.682 246.996 168.64C250.708 168.44 254.485 167.928 257.815 169.732C253.748 169.677 249.681 169.665 245.613 169.696Z" fill="#CB9757"/>
 <path d="M114.235 179.334C116.938 175.244 120.549 169.244 123.781 165.594C125.043 164.169 128.86 164.763 130.702 164.932C128.144 168.204 118.382 182.226 117.151 185.511C116.769 186.531 116.811 187.84 116.765 188.923C116.791 191.052 117.088 201.765 116.588 202.975C115.092 203.309 113.102 203.289 111.538 203.335C111.069 197.885 111.497 190.922 111.208 185.093C107.455 179.113 100.672 170.524 97.6107 164.718C99.0892 164.677 103.133 164.36 104.127 165.431C107.909 169.51 110.759 174.942 114.235 179.334Z" fill="#D09C54"/>
 <path d="M116.765 188.923C116.791 191.052 117.088 201.765 116.588 202.975C115.796 200.868 116.177 191.317 116.765 188.923Z" fill="#6C531B"/>
+<path d="M236.032 62.9055C236.032 62.9055 230.203 63.8414 227.183 59.8215C223.681 55.1422 228.965 47.4001 230.035 43.9332C231.104 40.4663 234.04 35 234.04 35C234.04 35 236.682 41.87 238.339 44.8052C239.995 47.7617 242.994 54.0149 241.673 57.7583C240.394 61.5018 238.947 62.6929 236.032 62.9055Z" fill="#E9AD61"/>
 </svg>
 
-        <p>Full-service short-term rental management, styling &amp; cleaning for Boise and the wider Treasure Valley. A husband &amp; wife team of Airbnb Superhosts.</p>
+        <p>Full-service short-term rental management, styling &amp; cleaning for Boise and the wider Treasure Valley.</p>
       </div>
       <div class="footer__col">
         <h4>Explore</h4>
@@ -865,7 +943,7 @@ body.menu-open .mobile-menu a:nth-child(6){transition-delay:.48s}
       </div>
       <div class="footer__col">
         <h4>Get in touch</h4>
-        <a href="mailto:hello@hyggebnb.co">hello@hyggebnb.co</a>
+        <a href="mailto:hello@hyggebnb.com">hello@hyggebnb.com</a>
         <a href="https://calendar.app.google/Xsxrj18eoiknFWmH8" target="_blank" rel="noopener">Book a call</a>
         <p>Boise, Idaho</p>
         <p>Serving the Treasure Valley</p>
@@ -873,7 +951,6 @@ body.menu-open .mobile-menu a:nth-child(6){transition-delay:.48s}
     </div>
     <div class="footer__bottom">
       <span>© <span id="yr"></span> Hygge BNB. All rights reserved.</span>
-      <span class="made">Superhost-managed · Insured &amp; vetted cleaning team</span>
     </div>
   </div>
 </footer>
@@ -1057,6 +1134,24 @@ if(heroBookBtn){
   },{threshold:0});
   navCtaIO.observe(heroBookBtn);
 }
+
+/* ============================================================
+   REVENUE CALCULATOR (net return only)
+   ============================================================ */
+(function(){
+  const rate=document.getElementById('calcRate'), occ=document.getElementById('calcOcc');
+  if(!rate||!occ) return;
+  const rateVal=document.getElementById('rateVal'), occVal=document.getElementById('occVal'), netVal=document.getElementById('netVal');
+  const MGMT=0.20, money=n=>'$'+Math.round(n).toLocaleString('en-US');
+  const fill=el=>el.style.setProperty('--fill', ((el.value-el.min)/(el.max-el.min))*100+'%');
+  function run(){
+    const r=+rate.value, o=+occ.value/100, net=r*365*o*(1-MGMT);
+    rateVal.textContent='$'+r; occVal.textContent=occ.value+'%';
+    netVal.innerHTML=money(net)+'<span class="calc__per">/year</span>';
+    fill(rate); fill(occ);
+  }
+  rate.addEventListener('input',run); occ.addEventListener('input',run); run();
+})();
 
 /* observe the cleaning app to auto-start first room when in view */
 const cleanIO=new IntersectionObserver((entries)=>{
