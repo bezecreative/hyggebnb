@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Hygge BNB: Short-Term Rental Management in Boise & the Treasure Valley</title>
-<meta name="description" content="Full-service short-term rental management, staging, and cleaning in Boise, Idaho. A husband & wife team of Airbnb Superhosts. Raise your occupancy, lower your stress." />
+<meta name="description" content="Full-service short-term rental management, styling, and cleaning in Boise, Idaho. A husband & wife team of Airbnb Superhosts. Raise your occupancy, lower your stress." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -339,7 +339,7 @@ body.menu-open .mobile-menu a:nth-child(6){transition-delay:.48s}
 .rate-card .note{margin-top:1.5em;padding-top:1.3em;border-top:1px solid rgba(247,243,234,.14);font-size:.95rem;color:var(--cream-soft)}
 .rate-card .btn{margin-top:1.6em}
 
-.svc-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:1.4em;flex-wrap:wrap}
+.svc-head{margin-bottom:1.4em}
 .svc-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:2px}
 .svc-list li{ display:flex;align-items:center;gap:.85em;padding:1.05em .2em;
   border-bottom:1px solid rgba(247,243,234,.1);font-size:1.04rem;
@@ -566,6 +566,31 @@ body.menu-open .mobile-menu a:nth-child(6){transition-delay:.48s}
   .footer__brand svg, .footer__brand p{ margin-inline:auto; }
   .footer__bottom{ justify-content:center; text-align:center; }
 }
+
+/* Mix & match under the heading, italic */
+.svc-sub{display:block;font-style:italic;color:var(--ink-soft);font-size:.95rem;margin-top:.28em}
+.faq-title{font-size:clamp(1.7rem,2.8vw,2.55rem);line-height:1.12;margin:.2em 0 .55em}
+/* hero/nav CTA behavior on mobile */
+@media(max-width:760px){
+  .hero .btn-row .btn.ghost{display:none}
+  .nav__cta{opacity:0;visibility:hidden;transform:translateY(-6px);pointer-events:none;transition:opacity .35s ease,transform .35s ease,visibility .35s}
+  body.show-nav-cta .nav__cta{opacity:1;visibility:visible;transform:none;pointer-events:auto}
+  .faq-title{font-size:1.3rem;line-height:1.22}
+}
+/* better mobile cleaning showcase: horizontal chip selector + full checklist */
+@media(max-width:640px){
+  .clean__app{padding:14px}
+  .room-tabs{flex-direction:row;flex-wrap:nowrap;overflow-x:auto;gap:8px;padding:2px 2px 10px;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;scrollbar-width:none;-ms-overflow-style:none}
+  .room-tabs::-webkit-scrollbar{display:none}
+  .room-tab{flex:0 0 auto;min-width:0;width:auto;padding:9px 15px;border-radius:999px;background:rgba(19,33,27,.05);scroll-snap-align:center}
+  .room-tab .rt-name{font-size:.9rem;flex:0 0 auto}
+  .room-tab.active{transform:none}
+  .room-panel{padding:14px;gap:16px}
+  .room-visual{max-height:190px}
+  .room-visual .arch-img{aspect-ratio:16/9}
+  .check-list{max-height:none;overflow:visible;padding-right:0}
+  .room-progress .pct{min-width:0}
+}
 </style>
 <script>window.IMGS={"clay-banks-JRkXiBmTRDI-unsplash":"images/clay-banks-JRkXiBmTRDI-unsplash.jpg","laura-jeff":"images/laura-jeff.jpg","prophsee-journals-ppG24zfENAI-unsplash":"images/prophsee-journals-ppG24zfENAI-unsplash.jpg","gabrielle-maurer-pedJG_zW1bQ-unsplash":"images/gabrielle-maurer-pedJG_zW1bQ-unsplash.jpg","zane-persaud-CCSfXSTAXXQ-unsplash":"images/zane-persaud-CCSfXSTAXXQ-unsplash.jpg","clay-banks-NKmqPlLCLTU-unsplash":"images/clay-banks-NKmqPlLCLTU-unsplash.jpg","hans-1uJVd81R_dY-unsplash":"images/hans-1uJVd81R_dY-unsplash.jpg","spacejoy":"images/spacejoy.jpg","clay-banks-r8i3RwrVcRk-unsplash":"images/clay-banks-r8i3RwrVcRk-unsplash.jpg","julian-hochgesang-SDxDQXixgfU-unsplash":"images/julian-hochgesang-SDxDQXixgfU-unsplash.jpg","hans-KPK_Qn2Pc5s-unsplash":"images/hans-KPK_Qn2Pc5s-unsplash.jpg"};</script>
 <script>document.documentElement.classList.add("js");setTimeout(function(){try{document.querySelectorAll(".reveal:not(.in)").forEach(function(e){e.classList.add("in")});document.body.classList.add("loaded");}catch(e){}},2200);</script>
@@ -602,9 +627,9 @@ body.menu-open .mobile-menu a:nth-child(6){transition-delay:.48s}
   <div class="hero__bg"><img data-img="spacejoy" src="images/spacejoy.jpg" loading="eager" fetchpriority="high" decoding="async" alt="A bright, warm living room with a tan leather sofa, an arched mirror and a layered rug" style="object-position:center 48%" /></div>
   <div class="hero__inner">
     <h1 class="display reveal-hero d2">Your rental home<br><span class="serif-italic" style="color:var(--amber-soft)">Fully Managed</span></h1>
-    <p class="lede reveal-hero d3">Full-service short-term rental management, staging, and cleaning, serving Boise, Idaho.</p>
+    <p class="lede reveal-hero d3">Full-service short-term rental management, styling, and cleaning, serving Boise, Idaho.</p>
     <div class="btn-row reveal-hero d4">
-      <a href="https://calendar.app.google/Xsxrj18eoiknFWmH8" target="_blank" rel="noopener" class="btn">Book a call <span class="ico">→</span></a>
+      <a id="heroBookBtn" href="https://calendar.app.google/Xsxrj18eoiknFWmH8" target="_blank" rel="noopener" class="btn">Book a call <span class="ico">→</span></a>
       <a href="#pricing" class="btn ghost">View Services</a>
     </div>
   </div>
@@ -649,7 +674,7 @@ body.menu-open .mobile-menu a:nth-child(6){transition-delay:.48s}
     <div class="process__layout">
       <div class="process__steps" id="processSteps">
         <article class="pstep active" data-i="0">
-          <div class="pstep__head"><span class="pstep__num">01</span><h3>Staging &amp; Decorating</h3></div>
+          <div class="pstep__head"><span class="pstep__num">01</span><h3>Styling &amp; Decorating</h3></div>
           <p class="muted">We dress every room around the small comforts guests remember: warm light, layered textures, and the little finishing touches that turn a house into a five-star stay.</p>
           <div class="pstep__img"><div class="arch-frame"><div class="arch-img"><img data-img="prophsee-journals-ppG24zfENAI-unsplash" src="images/prophsee-journals-ppG24zfENAI-unsplash.jpg" loading="lazy" decoding="async" alt="Styled tabletop with a ceramic vase, candle and books" /></div></div></div>
         </article>
@@ -659,7 +684,7 @@ body.menu-open .mobile-menu a:nth-child(6){transition-delay:.48s}
           <div class="pstep__img"><div class="arch-frame"><div class="arch-img"><img data-img="hans-1uJVd81R_dY-unsplash" src="images/hans-1uJVd81R_dY-unsplash.jpg" loading="lazy" decoding="async" alt="A sun-filled room with floor-to-ceiling windows looking onto the trees" /></div></div></div>
         </article>
         <article class="pstep" data-i="2">
-          <div class="pstep__head"><span class="pstep__num">03</span><h3>Managing</h3></div>
+          <div class="pstep__head"><span class="pstep__num">03</span><h3>Managing &amp; Cleaning</h3></div>
           <p class="muted">Fast, warm guest replies and spotless insured turnovers, plus restocking and hand-tied welcome baskets. You keep the deposits; we keep the calm.</p>
           <div class="pstep__img"><div class="arch-frame"><div class="arch-img"><img data-img="clay-banks-r8i3RwrVcRk-unsplash" src="images/clay-banks-r8i3RwrVcRk-unsplash.jpg" loading="lazy" decoding="async" alt="A freshly made bed in a bright, warm bedroom" /></div></div></div>
         </article>
@@ -731,7 +756,7 @@ body.menu-open .mobile-menu a:nth-child(6){transition-delay:.48s}
       <div class="reveal d1">
         <div class="svc-head">
           <h3 class="h-lg">Everything we offer</h3>
-          <span class="muted" style="font-size:.9rem">Mix &amp; match</span>
+          <span class="svc-sub">Mix &amp; match</span>
         </div>
         <ul class="svc-list">
           <li><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="#d8a45b" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4.5 4.5L19 7"/></svg></span>Full home styling</li>
@@ -784,7 +809,7 @@ body.menu-open .mobile-menu a:nth-child(6){transition-delay:.48s}
   <div class="wrap">
     <div class="faq__grid">
       <div>
-        <h2 class="reveal d1" style="font-size:clamp(1.7rem,2.8vw,2.55rem);line-height:1.12;margin:.2em 0 .55em">You probably have some questions. We have some answers.</h2>
+        <h2 class="faq-title reveal d1">You probably have some questions.<br>We have some answers.</h2>
         <p class="lede muted reveal d2" style="max-width:34ch">Still wondering about something specific to your home? That's what the call is for.</p>
         <a href="https://calendar.app.google/Xsxrj18eoiknFWmH8" target="_blank" rel="noopener" class="btn ghost reveal d2" style="margin-top:1.6em">Book a call <span class="ico">→</span></a>
       </div>
@@ -827,7 +852,7 @@ body.menu-open .mobile-menu a:nth-child(6){transition-delay:.48s}
 <path d="M116.765 188.923C116.791 191.052 117.088 201.765 116.588 202.975C115.796 200.868 116.177 191.317 116.765 188.923Z" fill="#6C531B"/>
 </svg>
 
-        <p>Full-service short-term rental management, staging &amp; cleaning for Boise and the wider Treasure Valley. A husband &amp; wife team of Airbnb Superhosts.</p>
+        <p>Full-service short-term rental management, styling &amp; cleaning for Boise and the wider Treasure Valley. A husband &amp; wife team of Airbnb Superhosts.</p>
       </div>
       <div class="footer__col">
         <h4>Explore</h4>
@@ -890,8 +915,7 @@ const FAQS = [
   { q:'Am I locked into a long-term corporate contract?', a:'Absolutely not. We believe in earning your business every single month. Our agreements are flexible, meaning you maintain control over your asset without being trapped by rigid, multi-year fine print.' },
   { q:'Can I still use my property for personal vacations?', a:'Of course. You can effortlessly block out dates for personal use or family visits through our system with zero financial penalties.' },
   { q:'How do you handle cleaning and maintenance quality control?', a:'Unlike companies that outsource to unvetted third-party apps, our cleaning and maintenance specialists are an insured, safe, and deeply trained extension of the Hygge BNB family. We conduct rigorous quality walkthroughs after every single check-out.' },
-  { q:'Do you use generic automated messaging, or do real humans handle guest inquiries?', a:'Real, human messages, every time. AI is a tool we may use behind the scenes, but we believe your guests have earned the respect of a genuine human interaction, not a generic automated reply.' },
-  { q:'What happens if a guest throws a party or breaks something?', a:'We prevent problems before they start using smart noise-monitoring technology and strict guest vetting. If an accident does happen, our local team handles the entire AirCover or insurance claims process for you immediately.' }
+  { q:'Do you use generic automated messaging, or do real humans handle guest inquiries?', a:'Real, human messages, every time. We believe your guests have earned the respect of a genuine human interaction, not a generic automated reply.' },
 ];
 
 /* ============================================================
@@ -920,6 +944,7 @@ function selectRoom(i){
   activeRoom=i;
   const r=ROOMS[i];
   [...roomTabs.children].forEach((t,n)=>t.classList.toggle('active',n===i));
+  if(matchMedia('(max-width:640px)').matches){ const at=roomTabs.children[i]; if(at) at.scrollIntoView({block:'nearest',inline:'center',behavior:'smooth'}); }
   roomImg.style.opacity=0;
   setTimeout(()=>{ roomImg.src=window.IMGS[r.imgKey]; roomImg.alt=r.title; roomImg.style.opacity=1; },180);
   roomTitle.textContent=r.title;
@@ -1023,6 +1048,15 @@ const io=new IntersectionObserver((entries)=>{
   entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target);} });
 },{threshold:0.12, rootMargin:'0px 0px -8% 0px'});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* mobile: show nav "Book a call" only after the hero button scrolls out of view */
+const heroBookBtn=document.getElementById('heroBookBtn');
+if(heroBookBtn){
+  const navCtaIO=new IntersectionObserver((ents)=>{
+    ents.forEach(en=>document.body.classList.toggle('show-nav-cta', !en.isIntersecting));
+  },{threshold:0});
+  navCtaIO.observe(heroBookBtn);
+}
 
 /* observe the cleaning app to auto-start first room when in view */
 const cleanIO=new IntersectionObserver((entries)=>{
